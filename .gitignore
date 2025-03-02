@@ -17,6 +17,16 @@ Thumbs.db
 
 # Temporary files
 tmp/
+undefined/
+
+# Generated files
+build/
+
+# Environment variables
+.env
+.env.*
+!.env.example
 
 # Local configuration files
+*.local
 *.local.*
