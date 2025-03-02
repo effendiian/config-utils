@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "redhat.vscode-yaml",
+        "timonwong.shellcheck",
+        "vivaxy.vscode-conventional-commits",
+        "1nvitr0.censitive",
+        "mads-hartmann.bash-ide-vscode",
+        "hverlin.mise-vscode"
+    ]
+}
