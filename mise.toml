@@ -1,2 +1,32 @@
 [tools]
 "cargo:cocogitto" = "6.1.0"
+"npm:ajv-cli" = "5.0.0"
+usage = "2.0.5"
+yq = "4.45.1"
+
+[env]
+# PATH variables.
+_.path = [
+    "{{ config_root }}/bin",
+]
+
+# Directories.
+PROJECT_ROOT = "{{ config_root }}"
+CONFIG_DIR   = "{{ config_root }}/.config"
+TEMP_DIR     = "{{ config_root }}/tmp"
+BUILD_DIR    = "{{ config_root }}/build"
+SCRIPTS_DIR  = "{{ config_root }}/scripts"
+
+# Secrets
+MY_SECRET = { value = "my-special-secret", redact = true }
+
+[task_config]
+dir = "{{ config_root }}"
+
+[tasks."make:env"]
+env.SOURCE_ENV_FILE="{{ env.CONFIG_DIR }}/env.yaml"
+env.SOURCE_ENV_SCHEMA="{{ env.CONFIG_DIR }}/env.schema.json"
+description = "Generate an .env file using `.config/env.yaml`."
+sources = ["mise.toml", ".config/env.yaml", ".config/env.schema.json"]
+outputs = ["build/*.env", "build/**/*.env"]
+file = "scripts/build_dotenv_from_yaml.sh"
