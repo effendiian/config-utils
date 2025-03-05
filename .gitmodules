@@ -1,0 +1,4 @@
+[submodule "third-party/bash-utility"]
+	path = third-party/bash-utility
+	url = https://github.com/labbots/bash-utility
+	branch = master
