@@ -1,5 +1,6 @@
 [tools]
 "cargo:cocogitto" = "6.1.0"
+gomplate = "4.3.0"
 "npm:ajv-cli" = "5.0.0"
 usage = "2.0.5"
 yq = "4.45.1"
